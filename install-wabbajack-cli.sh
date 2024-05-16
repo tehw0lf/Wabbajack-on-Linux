@@ -7,7 +7,7 @@ WABBAJACK_PREFIX="/data/Wabbajack"
 WABBAJACK_DIR="$WABBAJACK_PREFIX/drive_c/Wabbajack"
 MODLIST_DIR="$WABBAJACK_PREFIX/drive_c/Modlists"
 STEAM_DIR="/home/tehwolf/.local/share/Steam"
-SYMLINK_DIR="/data/Wabbajack/drive_c/Program Files (x86)/Steam/steamapps"
+SYMLINK_DIR="/data/Wabbajack/drive_c/Program Files (x86)/Steam"
 
 # prefix
 mkdir -p $WABBAJACK_PREFIX
