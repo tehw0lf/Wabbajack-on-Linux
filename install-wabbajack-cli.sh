@@ -23,5 +23,8 @@ unzip $WABBAJACK_ZIP -d $WABBAJACK_DIR/wabbajack-set-nexus-api-key
 cd $WABBAJACK_DIR
 chmod +x $WABBAJACK_DIR/wabbajack-set-nexus-api-key/wabbajack-cli.exe
 
-# run cli and set nexus api key
+# run cli and set nexus api key to test functionality
 env WINEPREFIX=$WABBAJACK_PREFIX wine $WABBAJACK_DIR/wabbajack-set-nexus-api-key/wabbajack-cli.exe set-nexus-api-key -k $NEXUS_API_KEY
+
+# create run script
+echo "env WINEPREFIX=\"$WABBAJACK_PREFIX\" wine \"$WABBAJACK_DIR/wabbajack-set-nexus-api-key/wabbajack-cli.exe\"" >"$WABBAJACKDIR/run-wabbajack.sh"
