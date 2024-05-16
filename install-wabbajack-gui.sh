@@ -21,6 +21,10 @@ ln -s "$STEAM_DIR" "$SYMLINK_DIR"
 cp $GUI_DOWNLOAD_FILE -d $WABBAJACK_DIR/
 chmod +x $WABBAJACK_DIR/Wabbajack.exe
 
+# Edge for WebView
+cd $WABBAJACK_PREFIX/drive_c
+env WINEPREFIX=$WABBAJACK_PREFIX wine $EDGE_DOWNLOAD_FILE
+
 # create run script
 echo "env WINEPREFIX=\"$WABBAJACK_PREFIX\" wine \"$WABBAJACK_DIR/Wabbajack.exe\"" >"$WABBAJACK_DIR/run-wabbajack.sh"
 chmod +x "$WABBAJACK_DIR/run-wabbajack.sh"
