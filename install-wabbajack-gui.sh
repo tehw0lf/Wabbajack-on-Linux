@@ -26,4 +26,4 @@ chmod +x $WABBAJACK_DIR/Wabbajack.exe
 echo "env WINEPREFIX=\"$WABBAJACK_PREFIX\" wine \"$WABBAJACK_DIR/Wabbajack.exe\"" >"$WABBAJACK_DIR/run-wabbajack.sh"
 chmod +x "$WABBAJACK_DIR/run-wabbajack.sh"
 
-echo "Installation complete. Copy the created run script at $WABBAJACK_DIR/run-wabbajack.su to launch Wabbajack"
+echo "Installation complete. Use the created run script at $WABBAJACK_DIR/run-wabbajack.su to launch Wabbajack"
