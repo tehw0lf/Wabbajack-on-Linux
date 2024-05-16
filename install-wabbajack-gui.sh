@@ -21,5 +21,8 @@ cp $GUI_DOWNLOAD_FILE -d $WABBAJACK_DIR/
 cd $WABBAJACK_DIR
 chmod +x $WABBAJACK_DIR/Wabbajack.exe
 
+# create run script
+echo "env WINEPREFIX=\"$WABBAJACK_PREFIX\" wine \"$WABBAJACK_DIR/Wabbajack.exe\"" >"$WABBAJACKDIR/run-wabbajack.sh"
+
 # run gui
 env WINEPREFIX=$WABBAJACK_PREFIX wine $WABBAJACK_DIR/Wabbajack.exe
