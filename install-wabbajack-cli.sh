@@ -1,19 +1,23 @@
 #!/usr/bin/env bash
 
 # Configuration
-CLI_DOWNLOAD_FILE="$HOME/Downloads/wabbajack-cli.zip"
-NEXUS_API_KEY=""
+WABBAJACK_ZIP="/tmp/set-nexus-api-key.zip"
+NEXUS_API_KEY="BUYNEO"
 WABBAJACK_PREFIX="/data/Wabbajack"
 WABBAJACK_DIR="$WABBAJACK_PREFIX/drive_c/Wabbajack"
-WABBAJACK_VERSION="3.5.0.1" # todo: get current version?
 MODLIST_DIR="$WABBAJACK_PREFIX/drive_c/Modlists"
+STEAM_DIR="/home/tehwolf/.local/share/Steam"
+SYMLINK_DIR="/data/Wabbajack/drive_c/Program Files (x86)/Steam/steamapps"
+
+cd /tmp
+wget https://github.com/wabbajack-tools/wabbajack/archive/refs/heads/set-nexus-api-key.zip -O $WABBAJACK_ZIP
 
 mkdir -p $WABBAJACK_PREFIX
 env WINEPREFIX=$WABBAJACK_PREFIX wineboot -u
 mkdir -p $WABBAJACK_DIR
 mkdir -p $MODLIST_DIR
-unzip $CLI_DOWNLOAD_FILE -d $WABBAJACK_DIR/$WABBAJACK_VERSION
+ln -s "$STEAM_DIR" "$SYMLINK_DIR"
+unzip $WABBAJACK_ZIP -d $WABBAJACK_DIR/
 cd $WABBAJACK_DIR
-chmod +x $WABBAJACK_DIR/$WABBAJACK_VERSION/wabbajack-cli.exe
-# todo: install dotnet8 and reactivate the step below
-#env WINEPREFIX=$WABBAJACK_PREFIX wine $WABBAJACK_DIR/$WABBAJACK_VERSION/wabbajack-cli.exe setnexusapikey $NEXUS_API_KEY
+chmod +x $WABBAJACK_DIR/wabbajack-set-nexus-api-key/wabbajack-cli.exe
+env WINEPREFIX=$WABBAJACK_PREFIX wine $WABBAJACK_DIR/wabbajack-set-nexus-api-key/wabbajack-cli.exe set-nexus-api-key $NEXUS_API_KEY
