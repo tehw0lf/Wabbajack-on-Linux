@@ -44,4 +44,3 @@ Both installation scripts create a run script at `$WABBAJACK_DIR/run-wabbajack.s
 ## Troubleshooting - GUI
 
 - the nexusmods download pages are flickering while loading
-- install script can hang after installing Edge (it might even open itself after installing) - if it reached that step it's safe to be terminated manually

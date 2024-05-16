@@ -2,7 +2,6 @@
 
 # configuration
 GUI_DOWNLOAD_FILE="$HOME/Downloads/Wabbajack.exe"
-EDGE_DOWNLOAD_FILE="$HOME/Downloads/MicrosoftEdgeSetup.exe"
 WABBAJACK_PREFIX="/data/Wabbajack"
 WABBAJACK_DIR="$WABBAJACK_PREFIX/drive_c/Wabbajack"
 MODLIST_DIR="$WABBAJACK_PREFIX/drive_c/Modlists"
@@ -26,7 +25,3 @@ chmod +x $WABBAJACK_DIR/Wabbajack.exe
 # create run script
 echo "env WINEPREFIX=\"$WABBAJACK_PREFIX\" wine \"$WABBAJACK_DIR/Wabbajack.exe\"" >"$WABBAJACK_DIR/run-wabbajack.sh"
 chmod +x "$WABBAJACK_DIR/run-wabbajack.sh"
-
-# install edge for WebView
-cd $WABBAJACK_PREFIX/drive_c
-env WINEPREFIX=$WABBAJACK_PREFIX wine $EDGE_DOWNLOAD_FILE
