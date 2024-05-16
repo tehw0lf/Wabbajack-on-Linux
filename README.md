@@ -39,8 +39,11 @@ SYMLINK_DIR="/data/Wabbajack/drive_c/Program Files (x86)/Steam"
 
 ## Usage
 
-Both installation scripts create a run script at `$WABBAJACK_DIR/run-wabbajack.sh` - feel free to copy this anywhere and double click / run through terminal to run.
+The CLI can be run with `env WINEPREFIX=$WABBAJACK_PREFIX wine $WABBAJACK_DIR/wabbajack-set-nexus-api-key/wabbajack-cli.exe `
+
+The GUI installation script creates a run script at `$WABBAJACK_DIR/run-wabbajack.sh` - feel free to copy this anywhere and double click / run through terminal to run.
 
 ## Troubleshooting - GUI
 
 - the nexusmods download pages are flickering while loading
+- after quitting and reopening wabbajack the nexusmods download pages stay black. possible fix: remove the folder `$WABBAJACK_PREFIX/drive_c/users/tehwolf/AppData/Local/Wabbajack`

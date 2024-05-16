@@ -26,6 +26,4 @@ chmod +x $WABBAJACK_DIR/wabbajack-set-nexus-api-key/wabbajack-cli.exe
 cd $WABBAJACK_DIR
 env WINEPREFIX=$WABBAJACK_PREFIX wine $WABBAJACK_DIR/wabbajack-set-nexus-api-key/wabbajack-cli.exe set-nexus-api-key -k $NEXUS_API_KEY
 
-# create run script
-echo "env WINEPREFIX=\"$WABBAJACK_PREFIX\" wine \"$WABBAJACK_DIR/wabbajack-set-nexus-api-key/wabbajack-cli.exe\"" >"$WABBAJACK_DIR/run-wabbajack.sh"
-chmod +x "$WABBAJACK_DIR/run-wabbajack.sh"
+echo "Installation complete. Use env WINEPREFIX=$WABBAJACK_PREFIX wine $WABBAJACK_DIR/wabbajack-set-nexus-api-key/wabbajack-cli.exe to launch Wabbajack CLI"
