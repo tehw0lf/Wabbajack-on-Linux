@@ -18,6 +18,8 @@ mkdir -p $MODLIST_DIR
 
 # enable steam library detection
 ln -s "$STEAM_DIR" "$SYMLINK_DIR"
+
+# wabbajack
 cp $GUI_DOWNLOAD_FILE -d $WABBAJACK_DIR/
 chmod +x $WABBAJACK_DIR/Wabbajack.exe
 
@@ -25,6 +27,6 @@ chmod +x $WABBAJACK_DIR/Wabbajack.exe
 echo "env WINEPREFIX=\"$WABBAJACK_PREFIX\" wine \"$WABBAJACK_DIR/Wabbajack.exe\"" >"$WABBAJACK_DIR/run-wabbajack.sh"
 chmod +x "$WABBAJACK_DIR/run-wabbajack.sh"
 
-# Edge for WebView
+# install edge for WebView
 cd $WABBAJACK_PREFIX/drive_c
 env WINEPREFIX=$WABBAJACK_PREFIX wine $EDGE_DOWNLOAD_FILE
