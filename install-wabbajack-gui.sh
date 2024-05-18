@@ -2,7 +2,7 @@
 
 # get wabbajack version, on top because it's needed for some configuration parts - it greps for "ocation" to be case insensitive
 
-WABBAJACK_VERSION=$(curl https://github.com/wabbajack-tools/wabbajack/releases/latest --verbose 2>&1 | grep ocation | sed 's:.*/::')
+WABBAJACK_VERSION=$(curl https://github.com/wabbajack-tools/wabbajack/releases/latest --verbose 2>&1 | grep ocation | sed 's:.*/::' | sed 's/.\{1\}$//')
 if [[ "$WABBAJACK_VERSION" == "" ]]; then
     WABBAJACK_VERSION="3.5.0.1"
 fi
