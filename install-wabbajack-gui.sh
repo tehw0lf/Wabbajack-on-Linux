@@ -39,7 +39,7 @@ chmod +x "$WABBAJACK_DIR/Wabbajack.exe"
 
 # create run script and make it executable
 echo "cd \"$WABBAJACK_DIR\"" >"$HOME/Desktop/run-wabbajack.sh"
-echo "env WINEPREFIX=\""$WABBAJACK_PREFIX/"\" wine ./Wabbajack.exe" >>"$$HOME/Desktop/run-wabbajack.sh"
-chmod +x "$$HOME/Desktop/run-wabbajack.sh"
+echo "env WINEPREFIX=\""$WABBAJACK_PREFIX/"\" wine ./Wabbajack.exe" >>"$HOME/Desktop/run-wabbajack.sh"
+chmod +x "$HOME/Desktop/run-wabbajack.sh"
 
-echo "Installation complete. Use the created run script at "$$HOME/Desktop/run-wabbajack.sh" to launch Wabbajack"
+echo "Installation complete. Use the created run script at "$HOME/Desktop/run-wabbajack.sh" to launch Wabbajack"
