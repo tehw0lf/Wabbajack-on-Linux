@@ -38,8 +38,8 @@ cp "$GUI_DOWNLOAD_FILE" -d "$WABBAJACK_DIR/"
 chmod +x "$WABBAJACK_DIR/Wabbajack.exe"
 
 # create run script and make it executable
-echo "cd \"$WABBAJACK_DIR\"" >"$WABBAJACK_DIR/run-wabbajack.sh"
-echo "env WINEPREFIX=\""$WABBAJACK_PREFIX/"\" wine Wabbajack.exe" >>"$WABBAJACK_DIR/run-wabbajack.sh"
-chmod +x "$WABBAJACK_DIR/run-wabbajack.sh"
+echo "cd \"$WABBAJACK_DIR\"" >"$HOME/Desktop/run-wabbajack.sh"
+echo "env WINEPREFIX=\""$WABBAJACK_PREFIX/"\" wine ./Wabbajack.exe" >>"$$HOME/Desktop/run-wabbajack.sh"
+chmod +x "$$HOME/Desktop/run-wabbajack.sh"
 
-echo "Installation complete. Use the created run script at "$WABBAJACK_DIR/run-wabbajack.sh" to launch Wabbajack"
+echo "Installation complete. Use the created run script at "$$HOME/Desktop/run-wabbajack.sh" to launch Wabbajack"
