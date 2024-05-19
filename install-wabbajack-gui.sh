@@ -15,8 +15,8 @@ MODLIST_DIR="/data/Modlists"
 MODLIST_SYMLINK_DIR="$WABBAJACK_PREFIX/drive_c/Modlists"
 DOWNLOADED_MODLISTS_DIR="/data/downloaded_mod_lists"
 DOWNLOADED_MODLISTS_SYMLINK_DIR="$WABBAJACK_PREFIX/drive_c/Wabbajack/$WABBAJACK_VERSION/downloaded_mod_lists"
-STEAM_DIR="/home/tehwolf/.local/share/Steam"
-STEAM_SYMLINK_DIR="/data/Wabbajack/drive_c/Program Files (x86)/Steam"
+STEAM_DIR="$HOME/.local/share/Steam"
+STEAM_SYMLINK_DIR="$WABBAJACK_PREFIX/drive_c/Program Files (x86)/Steam"
 GUI_INSTALL_SCRIPT_DIR="$HOME/Downloads/Wabbajack-on-Linux"
 
 # prefix
