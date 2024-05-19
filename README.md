@@ -8,25 +8,22 @@ Default values:
 ### GUI
 
 ```sh
-GUI_DOWNLOAD_FILE="$HOME/Downloads/Wabbajack.exe"
-EDGE_DOWNLOAD_FILE="$HOME/Downloads/MicrosoftEdgeSetup.exe"
-WABBAJACK_PREFIX="/data/Wabbajack"
-WABBAJACK_DIR="$WABBAJACK_PREFIX/drive_c/Wabbajack"
-MODLIST_DIR="$WABBAJACK_PREFIX/drive_c/Modlists"
-STEAM_DIR="/home/tehwolf/.local/share/Steam"
-SYMLINK_DIR="/data/Wabbajack/drive_c/Program Files (x86)/Steam"
+GUI_INSTALL_SCRIPT_DIR="$HOME/Downloads/Wabbajack-on-Linux" # location of this script
+WABBAJACK_PREFIX="/data/Wabbajack"                          # path where Wabbajack will be installed to
+MODLIST_DIR="/data/Modlists"                                # path where the actual modlists will be installed to
+DOWNLOADED_MODLISTS_DIR="/data/downloaded_mod_lists"        # path where Wabbajack will save modlist.wabbajack files
+STEAM_DIR="$HOME/.local/share/Steam"                        # steam directory to detect games from steam library
 ```
 
 ### CLI
 
 ```sh
-WABBAJACK_ZIP="/$HOME/Downloads/wabbajack-cli.zip"
-NEXUS_API_KEY="YOURAPIKEY"
-WABBAJACK_PREFIX="/data/Wabbajack"
-WABBAJACK_DIR="$WABBAJACK_PREFIX/drive_c/Wabbajack"
-MODLIST_DIR="$WABBAJACK_PREFIX/drive_c/Modlists"
-STEAM_DIR="/home/tehwolf/.local/share/Steam"
-SYMLINK_DIR="/data/Wabbajack/drive_c/Program Files (x86)/Steam"
+NEXUS_API_KEY="YOURAPIKEY"                           # your API key for nexusmods
+WABBAJACK_ZIP="/$HOME/Downloads/wabbajack-cli.zip"   # the downloaded wabbajack installation archive
+WABBAJACK_PREFIX="/data/Wabbajack"                   # path where Wabbajack will be installed to
+DOWNLOADED_MODLISTS_DIR="/data/downloaded_mod_lists" # path where Wabbajack will save modlist.wabbajack files
+MODLIST_DIR="/data/Modlists"                         # path where the actual modlists will be installed to
+STEAM_DIR="$HOME/.local/share/Steam"                 # steam directory to detect games from steam library
 ```
 
 ## GUI Installation
@@ -41,9 +38,13 @@ SYMLINK_DIR="/data/Wabbajack/drive_c/Program Files (x86)/Steam"
 
 The CLI can be run with `env WINEPREFIX=$WABBAJACK_PREFIX wine $WABBAJACK_DIR/wabbajack-set-nexus-api-key/wabbajack-cli.exe `
 
-The GUI installation script creates a run script at `$WABBAJACK_DIR/run-wabbajack.sh` - feel free to copy this anywhere and double click / run through terminal to run.
+The GUI installation script creates both a run script and a reset-and-run script on the user's Desktop. The reset-and-run script is intended to fix the blank page issue on nexus mods, see below.
 
 ## Troubleshooting - GUI
 
-- the nexusmods download pages are flickering while loading
-- after quitting and reopening wabbajack the nexusmods download pages stay black. possible fix: remove the folder `$WABBAJACK_PREFIX/drive_c/users/tehwolf/AppData/Local/Wabbajack`
+- after quitting and reopening Wabbajack the nexusmods download pages stay black and a right click inside the window causes both the page and Wabbajack to crash. Current fix: reinstall Wabbajack - the reset-and-run script does this automatically
+- the nexusmods download pages are flickering while loading - Current fix: none yet
+
+## Troubleshooting - CLI
+
+- no issues reported yet

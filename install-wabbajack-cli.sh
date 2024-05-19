@@ -1,16 +1,22 @@
 #!/usr/bin/env bash
 
-# configuration
-WABBAJACK_ZIP="/$HOME/Downloads/wabbajack-cli.zip"
-NEXUS_API_KEY="YOURAPIKEY"
-WABBAJACK_PREFIX="/data/Wabbajack"
+# configuration - please adapt to your system
+NEXUS_API_KEY="YOURAPIKEY"                           # your API key for nexusmods
+WABBAJACK_ZIP="/$HOME/Downloads/wabbajack-cli.zip"   # the downloaded wabbajack installation archive
+WABBAJACK_PREFIX="/data/Wabbajack"                   # path where Wabbajack will be installed to
+DOWNLOADED_MODLISTS_DIR="/data/downloaded_mod_lists" # path where Wabbajack will save modlist.wabbajack files
+MODLIST_DIR="/data/Modlists"                         # path where the actual modlists will be installed to
+STEAM_DIR="$HOME/.local/share/Steam"                 # steam directory to detect games from steam library
+
+## don't modify the script below this line unless you know what you're doing
+
+# wabbbajack directory inside prefix
 WABBAJACK_DIR="$WABBAJACK_PREFIX/drive_c/Wabbajack"
-MODLIST_DIR="/data/Modlists"
-MODLIST_SYMLINK_DIR="$WABBAJACK_PREFIX/drive_c/Modlists"
-DOWNLOADED_MODLISTS_DIR="/data/downloaded_mod_lists"
+
+# symlinks
 DOWNLOADED_MODLISTS_SYMLINK_DIR="$WABBAJACK_PREFIX/drive_c/Wabbajack/wabbajack-cli/downloaded_mod_lists"
-STEAM_DIR="$HOME/.local/share/Steam"
-STEAM_SYMLINK_DIR="/data/Wabbajack/drive_c/Program Files (x86)/Steam"
+MODLIST_SYMLINK_DIR="$WABBAJACK_PREFIX/drive_c/Modlists"
+STEAM_SYMLINK_DIR="$WABBAJACK_PREFIX/drive_c/Program Files (x86)/Steam"
 
 # prefix
 mkdir -p "$WABBAJACK_PREFIX"

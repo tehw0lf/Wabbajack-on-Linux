@@ -1,23 +1,31 @@
 #!/usr/bin/env bash
 
-# get wabbajack version, on top because it's needed for some configuration parts - it greps for "ocation" to be case insensitive
+# configuration - please adapt to your system
+GUI_INSTALL_SCRIPT_DIR="$HOME/Downloads/Wabbajack-on-Linux" # location of this script
+WABBAJACK_PREFIX="/data/Wabbajack"                          # path where Wabbajack will be installed to
+MODLIST_DIR="/data/Modlists"                                # path where the actual modlists will be installed to
+DOWNLOADED_MODLISTS_DIR="/data/downloaded_mod_lists"        # path where Wabbajack will save modlist.wabbajack files
+STEAM_DIR="$HOME/.local/share/Steam"                        # steam directory to detect games from steam library
 
+## don't modify the script below this line unless you know what you're doing
+
+# wabbajack
+GUI_DOWNLOAD_FILE="/tmp/Wabbajack.exe"
+WABBAJACK_DIR="$WABBAJACK_PREFIX/drive_c/Wabbajack"
+
+# get latest version number
 WABBAJACK_VERSION=$(curl https://github.com/wabbajack-tools/wabbajack/releases/latest --verbose 2>&1 | grep ocation | sed 's:.*/::' | sed 's/.\{1\}$//')
 if [[ "$WABBAJACK_VERSION" == "" ]]; then
     WABBAJACK_VERSION="3.5.0.1"
 fi
 
-# configuration
-GUI_DOWNLOAD_FILE="$HOME/Downloads/Wabbajack.exe"
-WABBAJACK_PREFIX="/data/Wabbajack"
-WABBAJACK_DIR="$WABBAJACK_PREFIX/drive_c/Wabbajack"
-MODLIST_DIR="/data/Modlists"
-MODLIST_SYMLINK_DIR="$WABBAJACK_PREFIX/drive_c/Modlists"
-DOWNLOADED_MODLISTS_DIR="/data/downloaded_mod_lists"
+# symlinks
 DOWNLOADED_MODLISTS_SYMLINK_DIR="$WABBAJACK_PREFIX/drive_c/Wabbajack/$WABBAJACK_VERSION/downloaded_mod_lists"
-STEAM_DIR="$HOME/.local/share/Steam"
+MODLIST_SYMLINK_DIR="$WABBAJACK_PREFIX/drive_c/Modlists"
 STEAM_SYMLINK_DIR="$WABBAJACK_PREFIX/drive_c/Program Files (x86)/Steam"
-GUI_INSTALL_SCRIPT_DIR="$HOME/Downloads/Wabbajack-on-Linux"
+
+# download latest release
+curl -o $GUI_DOWNLOAD_FILE https://github.com/wabbajack-tools/wabbajack/releases/latest/download/Wabbajack.exe
 
 # prefix
 mkdir -p "$WABBAJACK_PREFIX"
