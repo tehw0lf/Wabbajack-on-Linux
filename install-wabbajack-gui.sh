@@ -17,6 +17,7 @@ DOWNLOADED_MODLISTS_DIR="/data/downloaded_mod_lists"
 DOWNLOADED_MODLISTS_SYMLINK_DIR="$WABBAJACK_PREFIX/drive_c/Wabbajack/$WABBAJACK_VERSION/downloaded_mod_lists"
 STEAM_DIR="/home/tehwolf/.local/share/Steam"
 STEAM_SYMLINK_DIR="/data/Wabbajack/drive_c/Program Files (x86)/Steam"
+GUI_INSTALL_SCRIPT_DIR="$HOME/Downloads/Wabbajack-on-Linux"
 
 # prefix
 mkdir -p "$WABBAJACK_PREFIX"
@@ -42,4 +43,15 @@ echo "cd \"$WABBAJACK_DIR\"" >"$HOME/Desktop/run-wabbajack.sh"
 echo "env WINEPREFIX=\""$WABBAJACK_PREFIX/"\" wine ./Wabbajack.exe" >>"$HOME/Desktop/run-wabbajack.sh"
 chmod +x "$HOME/Desktop/run-wabbajack.sh"
 
-echo "Installation complete. Use the created run script at "$HOME/Desktop/run-wabbajack.sh" to launch Wabbajack"
+# create reset script and make it executable
+echo "#!/usr/bin/env bash" >"$HOME/Desktop/reset-and-run-wabbajack.sh"
+echo "PREFIX=\"$WABBAJACK_PREFIX\"" >>"$HOME/Desktop/reset-and-run-wabbajack.sh"
+echo "rm -rf \"\$PREFIX\"" >>"$HOME/Desktop/reset-and-run-wabbajack.sh"
+echo "\"$GUI_INSTALL_SCRIPT_DIR/install-wabbajack-gui.sh\"" >>"$HOME/Desktop/reset-and-run-wabbajack.sh"
+echo "cd \"\$PREFIX/drive_c/Wabbajack\"" >>"$HOME/Desktop/reset-and-run-wabbajack.sh"
+echo "env WINEPREFIX=\"\$PREFIX\" wine ./Wabbajack.exe" >>"$HOME/Desktop/reset-and-run-wabbajack.sh"
+chmod +x "$HOME/Desktop/reset-and-run-wabbajack.sh"
+
+echo " Installation complete. Use the created run script at $HOME/Desktop/run-wabbajack.sh to launch Wabbajack."
+echo " If the nexus mods login/download page stays blank, run $HOME/Desktop/reset-and-run-wabbajack.sh to discard the previous prefix."
+echo " This will not affect your downloaded modlists since they are symlinked into the Wabbajack installation directory."
