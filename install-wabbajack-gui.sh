@@ -25,7 +25,7 @@ MODLIST_SYMLINK_DIR="$WABBAJACK_PREFIX/drive_c/Modlists"
 STEAM_SYMLINK_DIR="$WABBAJACK_PREFIX/drive_c/Program Files (x86)/Steam"
 
 # download latest release
-curl -o $GUI_DOWNLOAD_FILE https://github.com/wabbajack-tools/wabbajack/releases/latest/download/Wabbajack.exe
+curl -o $GUI_DOWNLOAD_FILE -L https://github.com/wabbajack-tools/wabbajack/releases/latest/download/Wabbajack.exe
 
 # prefix
 mkdir -p "$WABBAJACK_PREFIX"
