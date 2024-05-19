@@ -2,7 +2,7 @@
 
 ## Configuration
 
-The configuration likely need to be adapted to your system.
+The configuration likely needs to be adapted to your system.
 Default values:
 
 ### GUI
@@ -44,7 +44,7 @@ The GUI installation script creates both a run script and a reset-and-run script
 
 ### GUI
 
-- after quitting and reopening Wabbajack the nexusmods download pages stay black and a right click inside the window causes both the page and Wabbajack to crash. Current fix: reinstall Wabbajack - the reset-and-run script does this automatically
+- after quitting and reopening Wabbajack the nexusmods download pages do not render and a right click inside the window causes both the page and Wabbajack to crash. Current fix: reinstall Wabbajack - the reset-and-run script does this automatically
 - the nexusmods download pages are flickering while loading - Current fix: none yet
 
 ### CLI
