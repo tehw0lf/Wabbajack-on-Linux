@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
 # configuration - please adapt to your system
-GUI_INSTALL_SCRIPT_DIR="$HOME/Downloads/Wabbajack-on-Linux" # location of this script
-WABBAJACK_PREFIX="/data/Wabbajack"                          # path where Wabbajack will be installed to
-MODLIST_DIR="/data/Modlists"                                # path where the actual modlists will be installed to
-DOWNLOADED_MODLISTS_DIR="/data/downloaded_mod_lists"        # path where Wabbajack will save modlist.wabbajack files
-STEAM_DIR="$HOME/.local/share/Steam"                        # steam directory to detect games from steam library
+GUI_INSTALL_SCRIPT_DIR="$HOME/Nextcloud/Coding/Bash/Wabbajack-on-Linux" # location of this script
+WABBAJACK_PREFIX="/data/Wabbajack"                                      # path where Wabbajack will be installed to
+MODLIST_DIR="/data/Modlists"                                            # path where the actual modlists will be installed to
+DOWNLOADED_MODLISTS_DIR="/data/downloaded_mod_lists"                    # path where Wabbajack will save modlist.wabbajack files
+STEAM_DIR="$HOME/.local/share/Steam"                                    # steam directory to detect games from steam library
 
 ## don't modify the script below this line unless you know what you're doing
 
@@ -24,8 +24,10 @@ DOWNLOADED_MODLISTS_SYMLINK_DIR="$WABBAJACK_PREFIX/drive_c/Wabbajack/$WABBAJACK_
 MODLIST_SYMLINK_DIR="$WABBAJACK_PREFIX/drive_c/Modlists"
 STEAM_SYMLINK_DIR="$WABBAJACK_PREFIX/drive_c/Program Files (x86)/Steam"
 
-# download latest release
-curl -o $GUI_DOWNLOAD_FILE -L https://github.com/wabbajack-tools/wabbajack/releases/latest/download/Wabbajack.exe
+# download latest release if it doesn't exist yet
+if [ ! -f "$GUI_DOWNLOAD_FILE" ]; then
+    curl -o "$GUI_DOWNLOAD_FILE" -L https://github.com/wabbajack-tools/wabbajack/releases/latest/download/Wabbajack.exe
+fi
 
 # prefix
 mkdir -p "$WABBAJACK_PREFIX"
