@@ -40,11 +40,13 @@ The CLI can be run with `env WINEPREFIX=$WABBAJACK_PREFIX wine $WABBAJACK_DIR/wa
 
 The GUI installation script creates both a run script and a reset-and-run script on the user's Desktop. The reset-and-run script is intended to fix the blank page issue on nexus mods, see below.
 
-## Troubleshooting - GUI
+## Known Issues
+
+### GUI
 
 - after quitting and reopening Wabbajack the nexusmods download pages stay black and a right click inside the window causes both the page and Wabbajack to crash. Current fix: reinstall Wabbajack - the reset-and-run script does this automatically
 - the nexusmods download pages are flickering while loading - Current fix: none yet
 
-## Troubleshooting - CLI
+### CLI
 
 - no issues reported yet
