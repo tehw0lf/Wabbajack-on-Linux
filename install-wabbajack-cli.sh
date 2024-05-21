@@ -10,7 +10,7 @@ STEAM_DIR="$HOME/.local/share/Steam"                 # steam directory to detect
 
 ## don't modify the script below this line unless you know what you're doing
 
-# wabbbajack
+# wabbajack
 WABBAJACK_DIR="$WABBAJACK_PREFIX/drive_c/Wabbajack"
 WABBAJACK_AUTH_DATA="$WABBAJACK_PREFIX/drive_c/users/$USER/AppData/Local/Wabbajack/encrypted"
 WABBAJACK_AUTH_DATA_BACKUP="/tmp/wjauth"
