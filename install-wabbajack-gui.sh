@@ -44,7 +44,7 @@ mkdir -p "$WABBAJACK_DIR/$WABBAJACK_VERSION"
 
 # restore current logins if available
 mkdir -p "$WABBAJACK_AUTH_DATA"
-cp "$WABBAJACK_AUTH_DATA_BACKUP/*" "$WABBAJACK_AUTH_DATA/" 2>/dev/null
+cp "$WABBAJACK_AUTH_DATA_BACKUP/"* "$WABBAJACK_AUTH_DATA" 2>/dev/null
 
 # enable steam library detection
 ln -s "$STEAM_DIR" "$STEAM_SYMLINK_DIR"
