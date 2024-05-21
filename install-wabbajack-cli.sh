@@ -10,8 +10,14 @@ STEAM_DIR="$HOME/.local/share/Steam"                 # steam directory to detect
 
 ## don't modify the script below this line unless you know what you're doing
 
-# wabbbajack directory inside prefix
+# wabbbajack
 WABBAJACK_DIR="$WABBAJACK_PREFIX/drive_c/Wabbajack"
+WABBAJACK_AUTH_DATA="$WABBAJACK_PREFIX/drive_c/users/$USER/AppData/Local/Wabbajack/encrypted"
+WABBAJACK_AUTH_DATA_BACKUP="/tmp/wjauth"
+
+# backup current logins if available
+mkdir -p "$WABBAJACK_AUTH_DATA_BACKUP"
+cp "$WABBAJACK_AUTH_DATA/"* "$WABBAJACK_AUTH_DATA_BACKUP" 2>/dev/null
 
 # symlinks
 DOWNLOADED_MODLISTS_SYMLINK_DIR="$WABBAJACK_PREFIX/drive_c/Wabbajack/wabbajack-cli/downloaded_mod_lists"
@@ -19,9 +25,14 @@ MODLIST_SYMLINK_DIR="$WABBAJACK_PREFIX/drive_c/Modlists"
 STEAM_SYMLINK_DIR="$WABBAJACK_PREFIX/drive_c/Program Files (x86)/Steam"
 
 # prefix
+rm -rf "$WABBAJACK_PREFIX"
 mkdir -p "$WABBAJACK_PREFIX"
 env WINEPREFIX="$WABBAJACK_PREFIX" wineboot -u
 mkdir -p "$WABBAJACK_DIR/wabbajack-cli"
+
+# restore current logins if available
+mkdir -p "$WABBAJACK_AUTH_DATA"
+cp "$WABBAJACK_AUTH_DATA_BACKUP/"* "$WABBAJACK_AUTH_DATA" 2>/dev/null
 
 # enable steam library detection
 ln -s "$STEAM_DIR" "$STEAM_SYMLINK_DIR"
