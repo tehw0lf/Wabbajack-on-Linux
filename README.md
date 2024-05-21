@@ -38,7 +38,11 @@ STEAM_DIR="$HOME/.local/share/Steam"                 # steam directory to detect
 
 The CLI can be run with `env WINEPREFIX=$WABBAJACK_PREFIX wine $WABBAJACK_DIR/wabbajack-set-nexus-api-key/wabbajack-cli.exe `
 
-The GUI installation script creates both a run script and a reset-and-run script on the user's Desktop. The reset-and-run script is intended to fix the blank page issue on nexus mods, see below.
+The GUI installation script creates both a run script and a reset-and-run script on the user's Desktop. The reset-and-run script is intended to fix the blank page issue on nexus mods, see below. The reset-and-run script will preserve existing logins to nexusmods and vectorplexus. Those logins will be saves into /tmp/wjauth, which can be deleted after running the reset script - they are automatically removed after rebooting / shutting down the system.
+
+## Updating Wabbajack
+
+The reset-and-run script can be used to update the Wabbajack installation as it both downloads the latest version and preserves existing logins. All folders inside the release-specific directory are either disposable or symbolic links.
 
 ## Known Issues
 
