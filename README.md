@@ -50,6 +50,7 @@ Re-run the install script or run the reset-and-run script. The installation scri
 
 - after quitting and reopening Wabbajack the nexusmods download pages do not render and a right click inside the window causes both the page and Wabbajack to crash. Current fix: reinstall Wabbajack - the reset-and-run script does this automatically
 - the nexusmods download pages are flickering while loading - Current fix: none yet
+- the nexusmods captcha is not loading - Current fix: wait / reinstall Wabbajack. This issue is rare but can occur
 
 ### CLI
 
