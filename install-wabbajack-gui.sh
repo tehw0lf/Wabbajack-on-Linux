@@ -60,7 +60,8 @@ cp "$GUI_DOWNLOAD_FILE" -d "$WABBAJACK_DIR/"
 chmod +x "$WABBAJACK_DIR/Wabbajack.exe"
 
 # create run script and make it executable
-echo "cd \"$WABBAJACK_DIR\"" >"$HOME/Desktop/run-wabbajack.sh"
+echo "#!/usr/bin/env bash" >"$HOME/Desktop/run-wabbajack.sh"
+echo "cd \"$WABBAJACK_DIR\"" >>"$HOME/Desktop/run-wabbajack.sh"
 echo "env WINEPREFIX=\""$WABBAJACK_PREFIX/"\" wine ./Wabbajack.exe" >>"$HOME/Desktop/run-wabbajack.sh"
 chmod +x "$HOME/Desktop/run-wabbajack.sh"
 
